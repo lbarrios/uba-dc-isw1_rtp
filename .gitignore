@@ -1,5 +1,4 @@
-*aux
-*out
-*toc
-*log
-*backup
+# Sublime Files #
+#################
+*.sublime-project
+*.sublime-workspace
