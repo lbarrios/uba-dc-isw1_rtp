@@ -1,0 +1,65 @@
+%-- 
+%  Introducción: acá debería figurar todo lo necesario como para que un lector
+%  no iniciado en el tema entienda el propósito general del sistema que van a
+%  describir. Puede citar algunos fragmentos del enunciado si lo consideran
+%  necesario, pero NO DEBE SER una copia del enunciado.
+%--
+
+\section{Introducción TP1}
+
+Mediante el presente trabajo, se nos pone frente a la tarea de realizar un
+\textbf{análisis de requerimientos} y una \textbf{propuesta de un sistema de
+software} para la cadena de supermercados MES\%, a pedido del CEO\footnote{El
+tutor de este trabajo práctico, en este caso, cumple este rol.} de la compañía.
+La propuesta debe ser planteada de tal forma que esta transmita claramente la
+manera en que será cumplido cierto conjunto de objetivos, junto con los
+mecanismos mediante los cuales el software se relacionará con los sistemas ya
+existentes, y su beneficio directo y potencial.
+
+A continuación, se incluye un resumen coloquial de los requerimientos, que
+describe el contexto dentro del cual se solicitó la implementación del sistema.
+
+\subsection{Contexto}
+
+La cadena MES\% ha venido creciendo rápidamente desde sus comienzos, debido a
+sus precios. Pero este crecimiento se ha detenido en los últimos seis meses. Se
+han identificado dos razones por las cuales se presume que las ventas han
+disminuído: 
+\begin{enumerate}
+  \item <<descontento de los clientes debido al excesivo tiempo de espera 
+  en las colas de las cajas>>.
+  \item <<ventas no concretadas por falta de mercadería>>.
+\end{enumerate}
+
+Con el objetivo de eliminar esos problemas, el \textbf{CEO} propuso los
+siguientes puntos, que se utilizarán de base para el desarrollo de nuestra
+propuesta:
+\begin{itemize}
+
+  \item las compras deben realizarse desde la web \textbf{www.mesporciento.com}
+  
+  \item los usuarios deben estar registrados
+
+  \item se registra un pedido, acordando con el sistema una fecha de entrega
+
+  \item se cuenta con camionetas para las entregas.
+
+  \item se planea incrementar la cantidad de depósitos, pero no la de locales
+
+  \item en un pedido online no se puede tener problemas de stock
+
+  \item desde cualquier local se debe poder solicitar la reposición de stock
+
+  \item considerar qué sucede cuando el envío no logra ser entregado
+
+  \item se debe poder modificar un pedido pendiente
+
+  \item no se puede realizar un pedido nuevo, si existen pedidos pendientes
+
+  \item el pago se puede hacer online o contrareembolso
+
+  \item se debe almacenar información para futuras estadísticas
+
+  \item se espera que el sistema escale y sea seguro
+
+\end{itemize}

@@ -1,0 +1,51 @@
+%-- 
+%  Presunciones: acá deberían listar aquellas cuestiones que asumieron por
+%  encima del enunciado. Estas cuestiones pueden provenir de alguna consulta con
+%  docentes. También pueden provenir de alguna especulación o interpretación que
+%  el grupo hizo.
+%--
+
+\section{Presunciones / Aclaraciones adicionales}
+
+Se incluyen a continuación aquellas presunciones que se utilizaron como
+complemento a las indicaciones originales. Estas pueden ser, o bien consultadas
+al \textbf{CEO} en caso de considerarlas lo suficientemente relevantes, o
+asumidas/interpretadas por cuenta propia.
+
+\begin{itemize}
+
+  \item En caso de que la cadena de supermercados decida inaugurar más
+\textbf{\red{depósitos}}, tanto la reposición de stock como los traslados
+interdepósito estarán a cargo de la compañía, sin ningún tipo de intervención
+por parte del \textbf{\blue{sistema}}. A efectos prácticos, entonces, se asumirá
+que existe un solo \textbf{\red{depósito}}, cuyo stock es la sumatoria del stock
+de todos los \textbf{\red{depósitos}}, y que todos los pedidos serán entregados
+desde el mismo.
+
+  \item Una empresa de \textbf{\magenta{logística}} se encargará de todos los
+traslados que se originen en cualquier \textbf{\red{depósito}}. El
+\textbf{\blue{sistema}} deberá contar con una interfaz adecuada que actúe como
+canal de comunicación bilateral con dicha empresa. Este canal deberá ser apto
+tanto para realizar consultas y pedidos de forma online, a través de solicitudes
+directas al servidor de la compañía de \textbf{\magenta{logística}}, como para
+informar o ingresar datos de forma indirecta, a través de la impresión o la
+carga manual de: remitos de traslado, comprobantes de pago, facturas, hojas de
+ruta, etcétera.
+
+  \item El \textbf{\blue{sistema}} deberá llevar, en todo momento, un control
+activo (en tiempo real, en línea) del stock del \textbf{\red{depósito}}.
+
+  \item Existe un \textbf{\orange{Departamento de Stock}}, que se encarga de
+organizar los pedidos a las proveedoras cuando un \textbf{\red{depósito}} se
+queda sin stock. Todo esto se hace por fuera del sistema, las proveedoras no son
+Agentes de nuestro modelo de contexto. Asumimos que el
+\textbf{\orange{Departamento de Stock}} se comunica con \textbf{\red{logística}}
+(la logística propia o la de la proveedora, cualquiera sea el caso) en cuanto
+para que lleve los pedidos hasta el \textbf{\red{depósito}} correspondiente.
+
+  \item Cada pedido se cierra al momento en que el \textbf{\red{depósito}}
+informa que el mismo fue armado. Consecuentemente, se asume que estos no
+necesariamente permanecerán abiertos hasta el momento en que son retirados por
+\textbf{\magenta{logística}}.
+
+\end{itemize}
