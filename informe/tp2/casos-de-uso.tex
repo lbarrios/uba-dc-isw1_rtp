@@ -8,6 +8,8 @@
 
 \captionsetup[table]{name=Caso de uso}
 
+Objetivo:  \nameref{para:1.1.1} 
+
 %
 % - CASO DE USO: 1) REGISTRANDOSE
 %
@@ -33,7 +35,7 @@
   \culabel{registrandose}
 \end{casodeuso}
 
-Este caso de uso responde al objetivo \textbf{lograr [cliente registrado] (1.1.1.1.1.1)}. 
+Este caso de uso responde al objetivo \textbf{\nameref{para:1.1.1.1.1.1}}. 
 
 Los pasos 1, 4, 6 y 9 se corresponden con el objetivo \textbf{lograr [ingresar datos de identificación y de domicilio] (1.1.1.1.1.1.2.1.1)}, y con el fenómeno \textbf{\ref{itm:f-cliente-datos-personal-sistema}: el cliente presenta datos de identificación y de domicilio}.
 
@@ -119,7 +121,7 @@ Este caso de uso se corresponde con el fenómeno \textbf{\ref{itm:correoelectron
   \culabel{autenticandose}
 \end{casodeuso}
 
-Este caso de uso se corresponde con el evento \textbf{\ref{itm:f-cliente-autentica-sistema}) el cliente ingresa credenciales en el sistema}, y con el objetivo \textbf{lograr [cliente se autentica de forma segura] (1.1.1.1.1.2)}, y con sus subobjetivos.
+Este caso de uso se corresponde con el evento \textbf{\ref{itm:f-cliente-autentica-sistema}) el cliente ingresa credenciales en el sistema}, y con el objetivo \textbf{\nameref{para:1.1.1.1.1.2}}, y con sus subobjetivos.
 
 %
 % - CASO DE USO: 6) LISTANDO PRODUCTOS DISPONIBLES
@@ -193,15 +195,15 @@ El paso 2 se corresponde con el fenómeno \textbf{\ref{itm:f-apilogistica-envia-
 
 El paso 3 se corresponde con el fenómeno \textbf{\ref{itm:f-sistema-envia-costo-cliente}: sistema informa el costo de la compra y el envío al cliente}, y con el objetivo \textbf{lograr [informar costo total] (1.1.1.1.4.5}.
 
-El paso 4 se corresponde con los fenómenos \textbf{\ref{itm:f-apilogistica-fechas-libres-sistema}, \ref{itm:f-sistema-fechas-libres-cliente} y \ref{itm:f-cliente-fecha-entrega-sistema}}, y con el objetivo \textbf{lograr [acordar fecha de entrega] (1.1.1.1.3)} y sus subobjetivos.
+El paso 4 se corresponde con los fenómenos \textbf{\ref{itm:f-apilogistica-fechas-libres-sistema}, \ref{itm:f-sistema-fechas-libres-cliente} y \ref{itm:f-cliente-fecha-entrega-sistema}}, y con el objetivo \textbf{\nameref{para:1.1.1.1.3}} y sus subobjetivos.
 
-El paso 5 se corresponde con el evento \textbf{\ref{itm:f-sistema-muestra-metodos-pago-cliente}: sistema presenta los métodos de pago disponibles al cliente} y con los objetivos \textbf{lograr [evaluar si permitir contraentrega] (1.1.1.1.4.1)} y \textbf{lograr [informar métodos de pago disponibles] (1.1.1.1.4.2)}.
+El paso 5 se corresponde con el evento \textbf{\ref{itm:f-sistema-muestra-metodos-pago-cliente}: sistema presenta los métodos de pago disponibles al cliente} y con los objetivos \textbf{\nameref{para:1.1.1.1.4.1}} y \textbf{lograr [informar métodos de pago disponibles] (1.1.1.1.4.2)}.
 
 El paso 6 se corresponde con el evento \textbf{\ref{itm:f-cliente-elige-metodo-pago-sistema}: el cliente elige el método de pago} y con el objetivo \textbf{lograr [elegir forma de pago] (1.1.1.1.4.3)}.
 
-Los fenómenos \textbf{\ref{itm:f-sistema-muestra-datos-pago-cliente}, \ref{itm:f-cliente-elige-dato-pago-sistema},  \ref{itm:f-sistema-redirige-cliente}, \ref{itm:f-cliente-autoriza-agentecobro}, \ref{itm:f-agentecobro-comprobante-sistema} y \ref{itm:f-sistema-envia-comprobante-correoelectronico}} se corresponden con el paso 7, y con el objetivo \textbf{lograr [si la forma de pago es online, se cobra online] (1.1.1.1.5)}. 
+Los fenómenos \textbf{\ref{itm:f-sistema-muestra-datos-pago-cliente}, \ref{itm:f-cliente-elige-dato-pago-sistema},  \ref{itm:f-sistema-redirige-cliente}, \ref{itm:f-cliente-autoriza-agentecobro}, \ref{itm:f-agentecobro-comprobante-sistema} y \ref{itm:f-sistema-envia-comprobante-correoelectronico}} se corresponden con el paso 7, y con el objetivo \textbf{\nameref{para:1.1.1.1.5}}. 
 
-El paso 7.1 se corresponde con el evento \textbf{\ref{itm:f-sistema-error-pago-cliente}: El sistema informa de error de pago al cliente} y está relacionado con el objetivo \textbf{lograr [si la forma de pago es online, se cobra online] (1.1.1.1.5)}.
+El paso 7.1 se corresponde con el evento \textbf{\ref{itm:f-sistema-error-pago-cliente}: El sistema informa de error de pago al cliente} y está relacionado con el objetivo \textbf{\nameref{para:1.1.1.1.5}}.
 
 El paso 8.1 se corresponde con el evento \textbf{\ref{itm:f-sistema-error-timeout-cliente}: sistema muestra error de timeout de carrito al cliente}, que se corresponde con \textbf{lograr [si el cliente no confirma el pedido en un intervalo de timeout, el pedido vuelve a estado de carrito] (1.1.1.1.6)}.
 

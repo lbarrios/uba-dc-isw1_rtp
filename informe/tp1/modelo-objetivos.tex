@@ -6,7 +6,7 @@
 
 \subsubsection{Listado de objetivos}
 
-\paragraph{1 - Objetivo primario}
+\paragraph{1 - Objetivo primario}  \label{para:1} 
 
 El objetivo primario del sistema es revertir la disminución de ventas (1) que se
 viene produciendo en la cadena de supermercados hace meses. Para ello, se nos
@@ -14,7 +14,7 @@ brinda la información de que las dos causas de las disminuciones son las largas
 colas en el supermercado y el agotamiento del stock (1.3), de donde se
 desprenden los objetivos (1.1) y (1.2).
 
-\paragraph{1.1 - Reducción de colas}
+\paragraph{1.1 - Reducción de colas} \label{para:1.1} 
 
 Dentro del contexto de la reducción de colas, se tomó la presunción de que cada
 venta online estaría disminuyendo las colas en la sucursal (1.1.2), dado que de
@@ -22,7 +22,7 @@ este modo ese cliente, que normalmente estaría haciendo cola en el supermercado
 puede encargar los productos desde la comodidad de su casa. De este modo, se
 toma el objetivo de permitir que el usuario compre de forma online (1.1.1).
 
-\paragraph{1.1.1 - Permitir al usuario la compra online} 
+\paragraph{1.1.1 - Permitir al usuario la compra online} \label{para:1.1.1} 
 
 Consideramos que para permitir que el cliente compre un pedido de forma online,
 deben ocurrir dos cosas, lograr que el cliente encargue el pedido (1.1.1.1)
@@ -33,19 +33,19 @@ eligiendo una forma de pago}, y lograr que el pedido sea cerrado y finalizado
 culmina con la entrega del pedido (o la cancelación/anulación, según el caso).
 
 \clearpage
-\paragraph{1.1.1.1 - Lograr[Cliente encarga pedido]}
+\paragraph{1.1.1.1 - Lograr[Cliente encarga pedido]} \label{para:1.1.1.1} 
 
 Para que un cliente encargue un pedido, es necesario que el mismo pueda
 identificarse en el sistema (1.1.1.1.1), que el pedido sea armado (1.1.1.1.2),
 que se pueda acordar una fecha de entrega (1.1.1.1.3), una forma de pago
 (1.1.1.1.4) y que si esta última es online, se le pueda cobrar.
 
-\paragraph{1.1.1.1.1 - Lograr[Cliente identificado]}
+\paragraph{1.1.1.1.1 - Lograr[Cliente identificado]} \label{para:1.1.1.1.1} 
 
 Para que el cliente pueda ser identificado por el sistema, es necesario que se
 encuentre registrado (1.1.1.1.1.1), y que se autentique (1.1.1.1.1.2)
 
-\paragraph{1.1.1.1.1.1 - Lograr[Cliente registrado]}
+\paragraph{1.1.1.1.1.1 - Lograr[Cliente registrado]} \label{para:1.1.1.1.1.1} 
 
 La forma en que un cliente se registra es uno de los o-refinamientos
 propuestos. Dividimos el registro entre online y presencial. El registro
@@ -58,14 +58,14 @@ por un empleado de la sucursal, y posteriormente cargados al sistema. Más
 pormenores sobre este refinamiento, junto con la justificación del puntaje
 asignado a los objetivos blandos, están explicados posteriormente.
 
-\paragraph{1.1.1.1.1.2 - Lograr[Cliente se autentica de forma segura]}
+\paragraph{1.1.1.1.1.2 - Lograr[Cliente se autentica de forma segura]} \label{para:1.1.1.1.1.2}
 
 La autenticación requiere que el cliente ingrese sus credenciales
 (1.1.1.1.1.2.1). Por otro lado, también es necesario proveer una interfaz que
 cuente con los mecanismos de seguridad adecuados (1.1.1.1.1.2.2), por ejemplo
 conexión HTTPS.
 
-\paragraph{1.1.1.1.2 - Lograr[Armado de pedido]}
+\paragraph{1.1.1.1.2 - Lograr[Armado de pedido]} \label{para:1.1.1.1.2}
 
 Para que el pedido sea armado, consideramos que es necesario que el cliente
 pueda ver el stock disponible para cada producto (1.1.1.1.2.1), y que logre
@@ -76,7 +76,7 @@ como pueden ser, perfil de comprador, generado a través del historial de
 compras, compras de otros clientes, relacionados según escala socioeconómica,
 edad, domicilio, etc.
 
-\paragraph{1.1.1.1.3 - Lograr[Acordar fecha de entrega]}
+\paragraph{1.1.1.1.3 - Lograr[Acordar fecha de entrega]} \label{para:1.1.1.1.3}
 
 En el transcurso del armado del pedido, es necesario que el cliente acuerde una
 fecha de entrega. Para ello, es necesario que el sistema le ofrezca un rango de
@@ -87,7 +87,7 @@ logística. En caso de no haberla, será necesario contar con una forma de
 calcularla. Luego de mostrarles las fechas, el cliente eligirá (1.1.1.1.3.3) la
 que más le convenga.
 
-\paragraph{1.1.1.1.4 - Lograr[Acordar forma de pago]}
+\paragraph{1.1.1.1.4 - Lograr[Acordar forma de pago]} \label{para:1.1.1.1.4}
 
 Además de que el cliente seleccione la fecha de entrega, es necesario que
 acuerde con el sistema una forma de pago. Para ello, el sistema deberá informar
@@ -96,7 +96,7 @@ el cliente deberá elegir entonces la que le resulte de su conveniencia
 (1.1.1.1.4.3). Hay un o-refinamiento aquí, sobre el objetivo de evaluar si se
 deberá permitir la contraentrega.
 
-\paragraph{1.1.1.1.4.1 - Lograr[Evaluar si permitir contraentrega]}
+\paragraph{1.1.1.1.4.1 - Lograr[Evaluar si permitir contraentrega]} \label{para:1.1.1.1.4.1}
 
 Para evaluar si el cliente puede realizar un pedido por contrareembolso,
 proponemos dos opciones.
@@ -127,14 +127,14 @@ previamente.
 Ambas opciones están detalladas más adelante, junto con la asignación de
 puntajes a los objetivos blandos.
 
-\paragraph{1.1.1.1.5 - Lograr[Si la forma de pago es online, cobrar]}
+\paragraph{1.1.1.1.5 - Lograr[Si la forma de pago es online, cobrar]} \label{para:1.1.1.1.5}
 
 Si el cliente elige el pago online, además, hay que cobrarle. Para ello, se
 cuenta con la participación del cliente, el cual deberá validarse a través del
 agente de cobro, para que el importe le sea deducido de su cuenta bancaria.
 
 \clearpage
-\paragraph{1.1.1.2 - Lograr[El pedido es finalizado y cerrado]}
+\paragraph{1.1.1.2 - Lograr[El pedido es finalizado y cerrado]} \label{para:1.1.1.2}
 
 Una vez que un pedido está encargado, es necesario que el mismo sea cerrado.
 Aquí pueden ocurrir dos cosas, que el usuario cancele el pedido antes de que el
@@ -145,7 +145,7 @@ stock es restado del conteo del sistema (1.1.1.2.1.2), y luego lograr que el
 mismo sea entregado a logística (1.1.1.2.1.3). Además de todo esto, será
 necesario asegurar que el envío sea realizado (1.1.1.2.1.4).
 
-\paragraph{1.1.1.2.1.4 - Lograr[Realizar el envío]}
+\paragraph{1.1.1.2.1.4 - Lograr[Realizar el envío]} \label{para:1.1.1.2.1.4}
 
 Al momento de realizar el envío, pueden ocurrir dos situaciones, o que el
 cliente reciba el pedido (1.1.1.2.1.4.1), o que no lo reciba (1.1.1.2.1.4.2).
@@ -154,7 +154,7 @@ no recibir el pedido, en una situación ``el cliente no está presente''. Es
 decir, también es este el caso cuando un cliente esta presente pero por alguna
 razón se niega a recibir el pedido.
 
-\paragraph{1.1.1.2.1.4.2 - Lograr[Realizar el envío]}
+\paragraph{1.1.1.2.1.4.2 - Lograr[Realizar el envío]} \label{para:1.1.1.2.1.4.2}
 
 En caso de que el cliente no reciba el pedido, será necesario deshacer la
 operación, es decir, reintegrar el dinero de ser necesario (1.1.1.2.1.4.2.1),
@@ -167,23 +167,23 @@ adecuados. Además, se le informará al cliente que su pedido no fue recibido
 mediante un email, y se le ofrecerá rehacerlo (1.1.1.2.1.4.2.4).
 
 \clearpage
-\paragraph{1.2 - Mantener[Stock disponible]}
+\paragraph{1.2 - Mantener[Stock disponible]} \label{para:1.2}
 
 Para mantener el stock disponible, se deberá mantener el stock disponible tanto en las sucursales (1.2.1) como en los depósitos (1.2.2)
 
-\paragraph{1.2.1 - Mantener[Stock disponible en sucursales]}
+\paragraph{1.2.1 - Mantener[Stock disponible en sucursales]} \label{para:1.2.1}
 
 Para mantener el stock disponible en las sucursales es necesario lograr realizar un conteo periódico del stock en las sucursales (1.2.1.1), y encargar una reposición por medio del sistema en cuanto el stock sea bajo (1.2.1.2). Por otro lado, será necesario lograr que el depósito sea informado en cuanto haya un pedido nuevo (1.2.1.3). Respecto a esto, la idea es que el depósito mantenga un sistema interno propio que cuente con acceso a la misma base de datos que el sistema web. Tamibén es necesario armar el pedido, y entregarlo a logística (1.2.1.4), de esto se encargaría el depósito. Finalmente, logística debe entregar la reposición de stock a la sucursal (1.2.1.5).
 
-\paragraph{1.2.2 - Mantener[Stock disponible en depósitos]}
+\paragraph{1.2.2 - Mantener[Stock disponible en depósitos]} \label{para:1.2.2}
 
 Para poder mantener el stock en el depósito, es necesario contar con un límite mínimo de productos, de forma tal de asegurarse de que cada producto se encuentre siempre por encima de este límite (1.2.2.2). Como cada producto es distinto del otro, y tienen distintos ritmos de ventas, este límite no puede ser igual para todos los productos, ni puede estar contenido dentro del código del programa. Para determinar este límite, entonces, será necesario contar con una forma de modificar los productos y sus límites, según las estadísticas de ventas de cada uno (1.2.2.1).
 
-\paragraph{1.2.2.1 - Lograr[Modificar productos y sus límites según estadísticas]}
+\paragraph{1.2.2.1 - Lograr[Modificar productos y sus límites según estadísticas]} \label{para:1.2.2.1}
 
 Por un lado se ofrece la capacidad típica de agregar nuevos productos, modificar los existentes, o dar de baja otros (ABM, 1.2.2.1.1). Utilizando esta interfaz, el administrador deberá modificar los productos, estipulando el límite inferior de stock para cada uno de ellos (1.2.2.1.3). Para ayudarlo, el sistema le ofrece estadísticas elaboradas sobre el registro de cada transacción de los clientes. Se puede visualizar la información de manera interactiva y se pueden aplicar herramientas avanzadas de \textit{machine learning} sobre los datos (1.2.2.1.2).
 
-\paragraph{1.2.2.2 - Mantener [Stock de cada producto por encima de límite estipulado por empresa]}
+\paragraph{1.2.2.2 - Mantener [Stock de cada producto por encima de límite estipulado por empresa]} \label{para:1.2.2.2}
 
 El sistema monitorea constantemente el stock de cada producto, y cuando uno de estos desciende por debajo del límite estipulado, se inicia un proceso de reabastecimiento. Como el producto no está en suficiente cantidad en nuestros depósitos, es necesario recurrir al Departamento de Stock (1.2.2.2.1) que se encarga de conseguir el producto a través de los distintos proveedores, los cuales serán encomendados para su entrega a la logística (1.2.2.2.2). Luego se inicia un proceso logístico que culmina con el producto en el depósito (1.2.2.2.3), y el nuevo stock ingresado al sistema (1.2.2.2.4).
 
