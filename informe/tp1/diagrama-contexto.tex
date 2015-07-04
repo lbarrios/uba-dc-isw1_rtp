@@ -14,12 +14,14 @@
   \item Sucursal
   \item Sistema
   \item Logística
-  \item Departamento de stock 
+  \item API de Logística
+  \item Departamento de Stock
   \item Agente de Cobro
   \item Administrador
   \item Sistema de Correo Electrónico
-  \item Financiera\footnote{Ejemplo: VERAZ}
-  \item Correo Argentino
+  \item Financiera(API)\footnote{Ejemplo: VERAZ}
+  \item Correo Argentino(API)
+  \item Proveedor
 \end{enumerate}
 \clearpage
 
@@ -31,14 +33,13 @@
 \begin{enumerate}
   \item Configuración y uso por parte del Administrador
   \begin{enumerate}
-    \item El Administrador ingresa credenciales en el Sistema \label{itm:f-administrador-credencial-sistema}
     \item El Administrador define el umbral de redituabilidad en el Sistema \label{itm:f-administrador-umbral-sistema}
     \item El Administrador consulta estadísticas en el Sistema \label{itm:f-administrador-estadistica-sistema}
+    \item El Administrador modifica producto a través de ABM \label{itm:f-administrador-modifica-productos}
   \end{enumerate}
 
   \item Registro presencial cliente
   \begin{enumerate}
-    % \item El Cliente se traslada a la Sucursal % No es una interacción, sino algo q hace el cliente solo. 
     \item El Cliente presenta la documentación en la Sucursal \label{itm:f-cliente-documentacion-sucursal}
     \item El Cliente presenta la factura asociada al domicilio en la Sucursal \label{itm:f-cliente-domicilio-sucursal}
     \item El Cliente presenta datos de tarjeta en la Sucursal \label{itm:f-cliente-tarjeta-sucursal}
@@ -55,7 +56,7 @@
     \item El Sistema valida domicilio con el Correo Argentino \label{itm:f-sistema-valida-correoargentino}
     \item El Sistema evalúa estado financiero del cliente con la Financiera. \label{itm:f-sistema-evalua-financiera}
     \item El Sistema le indica al Correo Electrónico que envíe mail de confirmación al Cliente. \label{itm:f-sistema-confirmacion-correoelectronico}
-    %\item El Sistema añade al Cliente. 
+    %\item El Sistema añade al Cliente.
     \fixme[poner que sist. pide validacion de datos de pago a agente de cobro, y la vuelta]
   \end{enumerate}
 
@@ -66,7 +67,7 @@
     \item El Sistema muestra recomendaciones al Cliente \label{itm:f-sistema-muestra-recomendaciones-cliente}
     \item El Cliente selecciona mercadería en el Sistema \label{itm:f-cliente-elige-mercaderia-sistema}
   \end{enumerate}
-    
+
 \item Confirmación compra
   \begin{enumerate}
     \item Cliente confirma carrito al sistema \label{itm:f-cliente-confirma-carrito-sistema}
@@ -91,7 +92,7 @@
     \item El cliente paga multa online (mediante agente de cobro) \label{itm:f-cliente-paga-multa-agentecobro}
     \item El cliente paga multa en efectivo a logística \label{itm:f-cliente-paga-multa-logistica}
   \end{enumerate}
-  
+
 \item Modificación de pedido
   \begin{enumerate}
     \item El Cliente modifica un pedido no cerrado en el Sistema \label{itm:f-cliente-modifica-pedido-sistema}
@@ -105,7 +106,7 @@
     \item El Depósito informa egreso de mercadería al Departamento de stock \label{itm:f-sistema-egresa-mercaderia-dptostock}
     \item El Depósito avisa al Sistema que el pedido está cerrado \label{itm:f-deposito-cerro-pedido-sistema}
     \item El Depósito entrega mercadería a Logística \label{itm:f-deposito-entrega-mercaderia-logistica}
-    \item Si forma de pago es contraentrega: 
+    \item Si forma de pago es contraentrega:
     \begin{enumerate}
       \item Cliente paga el pedido a Logística \label{itm:f-cliente-paga-logistica}
     \end{enumerate}
@@ -125,7 +126,7 @@
 
     % \item El Sistema añade una no-recepción al historial de recepciones del Cliente % operacio interna del sistema
     \item Logística devuelve el stock al Depósito \label{itm:f-logistica-devuelve-stock-deposito}
-    % \item El Sistema genera un link al pedido fallado. 
+    % \item El Sistema genera un link al pedido fallado.
     \item El Sistema arma un e-mail con el link al pedido fallido y la propuesta para que el cliente lo vuelva a hacer, y se lo envía al Sistema de Correo \label{itm:f-sistema-link-rehacer-correoelectronico}
     \item El Sistema de Correo electrónico envía mail al Cliente. \label{itm:correoelectronico-mail-cliente}
   \end{enumerate}
@@ -147,11 +148,6 @@
     \item Logística repone stock al Depósito \label{itm:f-logistica-repone-stock-deposito}
   \end{enumerate}
 
-\item Cierre de sesión
-  \begin{enumerate}
-    \item Cliente cierra sesión en el Sistema \label{itm:f-cliente-cierra-sesion-sistema}
-    \item Administrador	cierra sesión en el Sistema \label{itm:f-administrador-cierra-sesion-sistema}
-  \end{enumerate}
 \end{enumerate}
 \clearpage
 
