@@ -8,7 +8,6 @@
 
 \captionsetup[table]{name=Caso de uso}
 
-Objetivo:  \nameref{para:1.1.1}
 
 %
 % - CASO DE USO: 1) REGISTRANDOSE
@@ -35,36 +34,6 @@ Objetivo:  \nameref{para:1.1.1}
   \culabel{registrandose}
 \end{casodeuso}
 
-Este caso de uso responde al objetivo \textbf{\nameref{para:1.1.1.1.1.1}}.
-
-Los pasos 1, 4, 6 y 9 se corresponden con el objetivo \textbf{lograr [ingresar
-datos de identificación y de domicilio] (1.1.1.1.1.1.2.1.1)}, y con el fenómeno
-\textbf{\ref{itm:f-cliente-datos-personal-sistema}: el cliente presenta datos de
-identificación y de domicilio}.
-
-Los pasos 2 y 3 se corresponden con el objetivo \textbf{lograr [validar usuario
-y contraseña] (1.1.1.1.1.1.2.2.4)}.
-
-El paso 5 responde al objetivo \textbf{lograr [evaluar estado financiero]
-(1.1.1.1.1.1.2.2.2)}, y se corresponde con el fenómeno
-\textbf{\ref{itm:f-sistema-evalua-financiera}: sistema evalúa estado financiero
-a través de financiera}.
-
-El paso 7 responde al objetivo \textbf{lograr [validar domicilio]
-(1.1.1.1.1.1.2.2.1)}, y al fenómeno
-\textbf{\ref{itm:f-sistema-valida-correoargentino}: el sistema valida domicilio
-con el correo argentino}
-
-El paso 8 responde al objetivo \textbf{lograr [presentar datos de pago, si
-quiere hacer pagos online] (1.1.1.1.1.1.2.1.2)} y al evento
-\textbf{\ref{itm:f-cliente-datos-pago-sistema}: cliente presenta datos de pago
-al sistema}.
-
-Los pasos 10 y 11 responden al objetivo \textbf{lograr [validar mail]
-(1.1.1.1.1.1.2.2.5)} y al evento
-\textbf{\ref{itm:f-sistema-confirmacion-correoelectronico}: el sistema le
-indica al correo electrónico que envíe mail de confirmación al cliente.}
-
 %
 % - CASO DE USO: 2) CONFIRMANDO DIRECCION DE MAIL
 %
@@ -81,14 +50,6 @@ indica al correo electrónico que envíe mail de confirmación al cliente.}
   \culabel{confirmando-direccion-de-mail}
 \end{casodeuso}
 
-Este caso de uso se corresponde con el objetivo
-\textbf{lograr [validar mail] (1.1.1.1.1.1.2.2.5)}, y con el evento al evento
-\textbf{\ref{itm:f-sistema-confirmacion-correoelectronico}: el sistema le
-indica al correo electrónico que envíe mail de confirmación al cliente}.
-
-El paso 2 se corresponde con el objetivo
-\textbf{lograr [añadir cliente] (1.1.1.1.1.1.2.3)}.
-
 %
 % - CASO DE USO: 3) EVALUANDO ESTADO FINANCIERO
 %
@@ -103,11 +64,6 @@ El paso 2 se corresponde con el objetivo
   }
   \culabel{evaluado-estado-financiero}
 \end{casodeuso}
-
-Este caso de uso responde al objetivo \textbf{lograr
-[evaluar estado financiero] (1.1.1.1.1.1.2.2.2)}, y con el fenómeno
-\textbf{\ref{itm:f-sistema-evalua-financiera}: sistema evalúa estado
-financiero a través de financiera}.
 
 %
 % - CASO DE USO: 4) ENVIANDO MAIL
@@ -125,10 +81,6 @@ financiero a través de financiera}.
   \culabel{enviando-mail}
 \end{casodeuso}
 
-Este caso de uso se corresponde con el fenómeno
-\textbf{\ref{itm:correoelectronico-mail-cliente}: el sistema de correo
-electrónico envía mail al cliente}.
-
 %
 % - CASO DE USO: 5) AUTENTICANDOSE
 %
@@ -145,11 +97,6 @@ electrónico envía mail al cliente}.
   }
   \culabel{autenticandose}
 \end{casodeuso}
-
-Este caso de uso se corresponde con el evento
-\textbf{\ref{itm:f-cliente-autentica-sistema}) el cliente ingresa credenciales
-en el sistema}, y con el objetivo \textbf{\nameref{para:1.1.1.1.1.2}}, y con
-sus subobjetivos.
 
 %
 % - CASO DE USO: 6) LISTANDO PRODUCTOS DISPONIBLES
@@ -169,16 +116,6 @@ sus subobjetivos.
   \culabel{listando-productos-disponibles}
 \end{casodeuso}
 
-Los pasos 1, 2 y 4 se corresponden con el objetivo \textbf{lograr
-[mostrar stock disponible] (1.1.1.1.2.1)} y con el fenómeno
-\textbf{\ref{itm:f-sistema-muestra-stock-cliente}: el sistema muestra
-stock disponible al cliente}.
-
-Los pasos 3 y 4 se corresponden con el objetivo \textbf{lograr
-[mostrar recomendaciones] (1.1.1.1.2.2)} y con el fenómeno
-\textbf{\ref{itm:f-sistema-muestra-recomendaciones-cliente}: el sistema
-muestra recomendaciones al cliente.}
-
 %
 % - CASO DE USO: 7) AGREGANDO PRODUCTO AL CARRITO
 %
@@ -196,12 +133,6 @@ muestra recomendaciones al cliente.}
   }
   \culabel{agregado-producto-al-carrito}
 \end{casodeuso}
-
-Este caso de uso se corresponde con el objetivo \textbf{lograr
-[seleccionar mercadería] (1.1.1.1.2.3)} y con el fenómeno
-\textbf{\ref{itm:f-cliente-elige-mercaderia-sistema}: el cliente
-selecciona mercadería en el sistema}. El paso 2 se corresponde
-con el objetivo \textbf{lograr [mostrar stock disponible] (1.1.1.1.2.1)}.
 
 %
 % - CASO DE USO: 8) CONFIRMANDO COMPRA
@@ -224,26 +155,6 @@ con el objetivo \textbf{lograr [mostrar stock disponible] (1.1.1.1.2.1)}.
   }
   \culabel{confirmando-compra}
 \end{casodeuso}
-
-Este caso de uso responde al objetivo \textbf{lograr [confirmar carrito] (1.1.1.1.2.4)}, y al fenómeno \textbf{\ref{itm:f-cliente-confirma-carrito-sistema}: el cliente confirma el carrito al sistema}.
-
-Los pasos 1 y 1.1, se corresponden con el objetivo \textbf{lograr [si al confirmar carrito se acabó el stock de algún producto, se muestra mensaje de error y se quita producto del carrito, y se vuelve al estado previo a la confirmación] (1.1.1.1.2.5)} y con los fenómenos \textbf{\ref{itm:f-sistema-confirma-stock-cliente}: sistema ratifica al cliente stock disponible} y \textbf{\ref{itm:f-sistema-error-stock-cliente}: sistema muestra mensaje de error de producto no disponible al cliente}.
-
-El paso 2 se corresponde con el fenómeno \textbf{\ref{itm:f-apilogistica-envia-costo-sistema}: sistema obtiene el costo del envío de la API de Logística} y con el objetivo \textbf{lograr [calcular costo de envío] (1.1.1.1.4.4)}.
-
-El paso 3 se corresponde con el fenómeno \textbf{\ref{itm:f-sistema-envia-costo-cliente}: sistema informa el costo de la compra y el envío al cliente}, y con el objetivo \textbf{lograr [informar costo total] (1.1.1.1.4.5}.
-
-El paso 4 se corresponde con los fenómenos \textbf{\ref{itm:f-apilogistica-fechas-libres-sistema}, \ref{itm:f-sistema-fechas-libres-cliente} y \ref{itm:f-cliente-fecha-entrega-sistema}}, y con el objetivo \textbf{\nameref{para:1.1.1.1.3}} y sus subobjetivos.
-
-El paso 5 se corresponde con el evento \textbf{\ref{itm:f-sistema-muestra-metodos-pago-cliente}: sistema presenta los métodos de pago disponibles al cliente} y con los objetivos \textbf{\nameref{para:1.1.1.1.4.1}} y \textbf{lograr [informar métodos de pago disponibles] (1.1.1.1.4.2)}.
-
-El paso 6 se corresponde con el evento \textbf{\ref{itm:f-cliente-elige-metodo-pago-sistema}: el cliente elige el método de pago} y con el objetivo \textbf{lograr [elegir forma de pago] (1.1.1.1.4.3)}.
-
-Los fenómenos \textbf{\ref{itm:f-sistema-muestra-datos-pago-cliente}, \ref{itm:f-cliente-elige-dato-pago-sistema},  \ref{itm:f-sistema-redirige-cliente}, \ref{itm:f-cliente-autoriza-agentecobro}, \ref{itm:f-agentecobro-comprobante-sistema} y \ref{itm:f-sistema-envia-comprobante-correoelectronico}} se corresponden con el paso 7, y con el objetivo \textbf{\nameref{para:1.1.1.1.5}}.
-
-El paso 7.1 se corresponde con el evento \textbf{\ref{itm:f-sistema-error-pago-cliente}: El sistema informa de error de pago al cliente} y está relacionado con el objetivo \textbf{\nameref{para:1.1.1.1.5}}.
-
-El paso 8.1 se corresponde con el evento \textbf{\ref{itm:f-sistema-error-timeout-cliente}: sistema muestra error de timeout de carrito al cliente}, que se corresponde con \textbf{lograr [si el cliente no confirma el pedido en un intervalo de timeout, el pedido vuelve a estado de carrito] (1.1.1.1.6)}.
 
 %
 % - CASO DE USO: 9) CALCULAR COSTO DE ENVIO
@@ -278,10 +189,6 @@ El paso 8.1 se corresponde con el evento \textbf{\ref{itm:f-sistema-error-timeou
   \culabel{acordando-fecha-de-entrega}
 \end{casodeuso}
 
-El paso 1 se corresponde con el evento \textbf{\ref{itm:f-apilogistica-fechas-libres-sistema}: sistema pregunta próximas fechas libres a la API de logística}
-El paso 2 se corresponde con el evento \textbf{\ref{itm:f-sistema-fechas-libres-cliente}: el sistema presenta las posibles fechas de entrega al cliente}
-El paso 3 se corresponde con el evento \textbf{\ref{itm:f-cliente-fecha-entrega-sistema}: el cliente indica la fecha de entrega deseada al sistema}
-
 %
 % - CASO DE USO: 11) PAGANDO ONLINE
 %
@@ -303,13 +210,6 @@ El paso 3 se corresponde con el evento \textbf{\ref{itm:f-cliente-fecha-entrega-
   }
   \culabel{pagando-online}
 \end{casodeuso}
-
-% 7k: El sistema muestra datos de pago asociados al cliente
-% 7l: El cliente indica dato de pago
-% 7m: El sistema redirige al cliente a la ventana del Agente de Cobro
-% 7n: El cliente autoriza la operación en la ventana del Agente de Cobro
-% 7o: El agente de cobro envía estado y comprobante al sistema
-% 7p: El sistema pide mail de comprobante de pago al Correo Electrónico
 
 %
 % - CASO DE USO: 12) AGREGANDO DATOS DE PAGO ONLINE
