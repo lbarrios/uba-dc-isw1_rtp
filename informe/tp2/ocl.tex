@@ -14,19 +14,19 @@ Inv: self.redituabilidad = self.precioDeVenta - self.precioDeLista
 %
 % - OCL: 2
 %
-  \begin{itemocl}{La redituabilidad de un pedido es la ganancia menos el costo.}
-Context: Pedido
+  \begin{itemocl}{La redituabilidad de un pedido de cliente es la ganancia menos el costo.}
+Context: Pedido de Cliente
 
 ganancia(p) = if p.estadoPedido == Concretado
-	   then p.unidades->collect(redituabilidad)->sum()
+	   then p.contiene->collect(redituabilidad)->sum()
 	   else 0
 	   endif
-costo(p) = if p.envio->size() == 1
-	then p.envio.costo
+costo(p) = if p.seEnvio->notEmpty()
+	then p.seEnvio.costo
 	else 0
 	endif
-	+ if p.envio->size() == 1 and p.envio.oclIsTypeOf(EnvioFallido)
-	then p.envio.costoMercaderiaMalograda
+	+ if p.seEnvio->notEmpty() and p.seEnvio.oclIsTypeOf(EnvioFallido)
+	then p.seEnvio.costoMercaderiaMalograda
 	else 0
 	endif
 Inv: self.redituabilidad = ganancia(self) - costo(self)
@@ -39,7 +39,7 @@ Inv: self.redituabilidad = ganancia(self) - costo(self)
   \begin{itemocl}{Se le permite la contraentrega si y solo si la redituabilidad del cliente es mayor al umbral de redituabilidad.}
 Context: Cliente Particular
 
-redituabilidadCliente(c) = c.pedidos->collect(redituabilidad)->sum()
+redituabilidadCliente(c) = c.realizo->collect(redituabilidad)->sum()
 Inv: self.permitidoContraentrega = redituabilidadCliente(self) > GLOBAL_VARIABLE(umbralRedituabilidad)
   \end{itemocl}
 
@@ -47,9 +47,9 @@ Inv: self.permitidoContraentrega = redituabilidadCliente(self) > GLOBAL_VARIABLE
 %
 % - OCL: 4
 %
-  \begin{itemocl}{Un cliente no puede tener dos pedidos vigentes.}
+  \begin{itemocl}{Un cliente particular no puede tener dos pedidos vigentes.}
 Context: Cliente Particular
-Inv: self.pedidos->filter(x | {entregado, anulado, cancelado}->excludes(x.estado)).size() < 2
+Inv: self.realizo->filter(x | {entregado, anulado, cancelado}->excludes(x.estado)).size() < 2
   \end{itemocl}
 
 %
@@ -57,18 +57,18 @@ Inv: self.pedidos->filter(x | {entregado, anulado, cancelado}->excludes(x.estado
 %
   \begin{itemocl}{Un Producto está bajo en stock en un Depósito si y sólo sí la cantidad de unidades de dicho producto en el Depósito está por debajo del umbral mínimo de dicho producto.}
 Context: Producto
-Inv: Deposito.allInstances()->forall(deposito | 
-    (self.estaEnBaja->filter(deposito2 | deposito = deposito2).size() = 1) =
-    (deposito.tengo->filter(unidad | unidad.soy = self).size() < self.umbralMinimo)
+Inv: Deposito.allInstances()->forall(deposito |
+    (self.estaBajoEnStock->filter(deposito2 | deposito = deposito2).size() = 1) =
+    (deposito.contiene->filter(unidad | unidad.correspondeA = self).size() < self.umbralMinimo)
 )
   \end{itemocl}
 
 %
 % - OCL: 6
 %
-  \begin{itemocl}{Para cada pedido, $fechaCreacion < fechaDespacho < fechaEntrega$}
+  \begin{itemocl}{Para cada pedido de cliente, $fechaCreacion < fechaDespacho < fechaEntrega$}
 Context: Envio
-Inv: self.sobrePedido.fechaCreacion < self.fechaDespacho < self.sobrePedido.fechaEntrega
+Inv: self.correspondeA.fechaCreacion < self.fechaDespacho < self.correspondeA.fechaEntrega
   \end{itemocl}
 
 %
@@ -78,33 +78,33 @@ Inv: self.sobrePedido.fechaCreacion < self.fechaDespacho < self.sobrePedido.fech
       Una unidad está en solo uno de los siguientes lugares:
           pedidoAProveedor
           depósito
-          depósito y en pedido en estado enCarrito, anulado, cancelado
-          en pedido confirmado
+          depósito y en pedido de cliente en estado enCarrito, anulado, cancelado
+          en pedido de cliente confirmado
     }
 Context: Unidad
 Inv:
-(self.enPedidoAProovedor->notEmpty() and self.enDeposito->isEmpty() and self.enPedido->isEmpty())
+(self.esContenida->notEmpty() and self.almacenadaEn->isEmpty() and self.perteneceA->isEmpty())
 or
-(self.enDeposito->notEmpty() and self.enPedidoAProovedor->isEmpty() and self.enPedido->isEmpty())
+(self.almacenadaEn->notEmpty() and self.esContenida->isEmpty() and self.perteneceA->isEmpty())
 or
-(self.enDeposito->notEmpty() and self.enPedidoAProovedor->isEmpty() and self.enPedido->notEmpty() and {enCarrito, cancelado, anulado}->includes(self.enPedido.estado))
+(self.almacenadaEn->notEmpty() and self.esContenida->isEmpty() and self.perteneceA->notEmpty() and {enCarrito, cancelado, anulado}->includes(self.perteneceA.estado))
 or
-(self.enDeposito->isEmpty() and self.enPedidoAProovedor->isEmpty() and self.enPedido->filter(p | {enCarrito, cancelado, anulado}->excludes(p.estado)).size() == 1)
+(self.almacenadaEn->isEmpty() and self.esContenida->isEmpty() and self.perteneceA->filter(p | {enCarrito, cancelado, anulado}->excludes(p.estado)).size() == 1)
   \end{itemocl}
 
 %
 % - OCL: 8
 %
   \begin{itemocl}{
-      Un cliente C tiene un producto recomendado P si y solo si:
+      Un cliente particular C tiene un producto recomendado P si y solo si:
           C nunca compro P y
-          P pertenece a la lista de 10 más comprados de algún cliente parecido a C
+          P pertenece a la lista de 10 más comprados de algún cliente particular parecido a C
     }
 Context: Cliente Particular
   edadParecida(cliente1, cliente2) = |cliente1.edad - cliente2.edad| < 4
-  
-  productosComprados(cliente) = cliente.hicePedido.incluyo.soy
-  
+
+  productosComprados(cliente) = cliente.realizo.contiene.correspondeA
+
   cantUnidadesCompradas(producto, cliente) = productosComprados(cliente)->filter(p | p = producto)->size()
 
   cantUnidadesCompradasOrdenadas(cliente) = productosComprados(cliente)->asSet()->sortedBy(p | cantUnidadesCompradas(p, cliente))->reverse()
@@ -113,7 +113,7 @@ Context: Cliente Particular
 
   clienteParecido(cliente1, cliente2) = edadParecida(cliente1, cliente2) and intersection(diezMasComprados(cliente1), diezMasComprados(c2))->size() >= 5
 
-  Inv: self.meRecomiendan->forAll(producto | productosComprados(self)->excludes(producto) 
+  Inv: self.seLeRecomiendan->forAll(producto | productosComprados(self)->excludes(producto)
       and ClienteParticular.allInstances()->exists(c | clienteParecido(self, c) and diezMasComprados(c)->includes(p))
   )
   \end{itemocl}
@@ -124,8 +124,8 @@ Context: Cliente Particular
   \begin{itemocl}{Comprobantes deben tener asociados datos de pago registrados por el cliente.
 Observación: la tarjeta puede tener como titular a un familiar, pero quien la registra es el cliente.}
     Context: Comprobante de tarjeta de credito
-    Inv: self.tarjeta.asociadoA = self.pagoDePedido.hechoPor
+    Inv: self.datosDePago.asociadoA = self.esPagoDe.fueRealizadoPor
     Context: Comprobante PayPal
-    Inv: self.cuenta.asociadoA = self.pagoDePedido.hechoPor
+    Inv: self.datosDePago.asociadoA = self.esPagoDe.fueRealizadoPor
   \end{itemocl}
 \end{listocl}
