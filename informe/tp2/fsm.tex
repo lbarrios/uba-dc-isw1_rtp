@@ -1,5 +1,6 @@
 \section{Máquinas de estados finitos}
 
+\subsection{Armado de carrito}
 Con máquinas de estados finitos se modelaron clientes compitiendo por recursos
 limitados --- en este caso unidades --- en el contexto de \textit{una} compra.
 Por lo tanto \texttt{carrito confirmado} es un estado terminal.
@@ -17,4 +18,20 @@ Por lo tanto no hubo necesidad de utilizar la notación de \textit{!} y
   \begin{center}
   \includegraphics[angle=90,height=.9\textheight]{tp2/images/fsm.pdf}
   \end{center}
+  \caption{Armado de carrito}
+  \label{fsm:compra}
+\end{figure}
+
+\subsection{Pedido a proveedor}
+
+Aquí se quiso modelar el pedido de un depósito a un proveedor de un producto.
+Es una simplificación que oculta la multiplicidad de depósitos, productos y
+proveedores.
+
+\begin{figure}[H]
+  \begin{center}
+  \includegraphics[height=.9\textheight]{tp2/images/fsm-pedido-a-proveedor.pdf}
+  \end{center}
+  \caption{Pedido a proveedor}
+  \label{fsm:proveedor}
 \end{figure}
