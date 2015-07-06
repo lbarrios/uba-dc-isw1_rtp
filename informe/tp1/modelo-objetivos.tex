@@ -43,7 +43,7 @@ que se pueda acordar una fecha de entrega (1.1.1.1.3), una forma de pago
 \paragraph{1.1.1.1.1 - Lograr[Cliente identificado]} \label{para:1.1.1.1.1}
 
 Para que el cliente pueda ser identificado por el sistema, es necesario que se
-encuentre registrado (1.1.1.1.1.1), y que se autentique (1.1.1.1.1.2)
+encuentre registrado (1.1.1.1.1.1), y que se autentique (1.1.1.1.1.2).
 
 \paragraph{1.1.1.1.1.1 - Lograr[Cliente registrado]} \label{para:1.1.1.1.1.1}
 
@@ -132,13 +132,17 @@ agente de cobro, para que el importe le sea deducido de su cuenta bancaria.
 \paragraph{1.1.1.2 - Lograr[El pedido es finalizado y cerrado]} \label{para:1.1.1.2}
 
 Una vez que un pedido está encargado, es necesario que el mismo sea cerrado.
-Aquí pueden ocurrir dos cosas, que el usuario cancele el pedido antes de que el
-mismo sea preparado (1.1.1.2.2), caso en el que el mismo se anula y se le
-devuelve el dinero, o que el usuario confirme el pedido (1.1.1.2.1). En este
-último caso, será necesario preparar el pedido (1.1.1.2.1.1) a la vez que el
-stock es restado del conteo del sistema (1.1.1.2.1.2), y luego lograr que el
-mismo sea entregado a logística (1.1.1.2.1.3). Además de todo esto, será
-necesario asegurar que el envío sea realizado (1.1.1.2.1.4).
+Pueden ocurrir varias cosas.
+Si el pedido aún no fue preparado, el cliente puede elegir cancelar (1.1.1.2.2)
+o modificar (1.1.1.2.3) el pedido. En ambos casos el pedido es anulado y si
+se pagó online se reintegra el dinero. Pero en el caso de la modificación
+se redirigé al cliente hacia la sección de armado de carrito, con su carrito
+previo cargado, para que pueda hacer modificaciones y confirmar el pedido
+nuevamente.
+
+Si el usuario termina todos los pasos de confirmación y el pedido no es ni
+cancelado ni modificado, el depósito prepara el pedido (1.1.1.2.1.1) y lo
+entrega a logística (1.1.1.2.1.3), que realiza el envío.
 
 \paragraph{1.1.1.2.1.4 - Lograr[Realizar el envío]} \label{para:1.1.1.2.1.4}
 
@@ -149,17 +153,17 @@ no recibir el pedido, en una situación ``el cliente no está presente''. Es
 decir, también es este el caso cuando un cliente esta presente pero por alguna
 razón se niega a recibir el pedido.
 
-\paragraph{1.1.1.2.1.4.2 - Lograr[Realizar el envío]} \label{para:1.1.1.2.1.4.2}
+%% \paragraph{1.1.1.2.1.4.2 - Lograr[si el cliente no está presente cuando llega el pedido, se devuelve la mercadería]} \label{para:1.1.1.2.1.4.2}
 
-En caso de que el cliente no reciba el pedido, será necesario deshacer la
-operación, es decir, reintegrar el dinero de ser necesario (1.1.1.2.1.4.2.1),
-marcar el pedido como no recibido en el historial del cliente (1.1.1.2.1.4.2.2),
-y que logística devuelva el stock al depósito para que sea reingresado
-(1.1.1.2.1.4.2.3). Esto significa que Depósito realizará la evaluación de los
-productos (ya que algunos pueden haberse roto o perdido su calidad en el
-transcurso del envío), y reingresará a stock los que considera que se encuentran
-adecuados. Además, se le informará al cliente que su pedido no fue recibido
-mediante un email, y se le ofrecerá rehacerlo (1.1.1.2.1.4.2.4).
+%% En caso de que el cliente no reciba el pedido, será necesario deshacer la
+%% operación, es decir, reintegrar el dinero de ser necesario (1.1.1.2.1.4.2.1),
+%% marcar el pedido como no recibido en el historial del cliente (1.1.1.2.1.4.2.2),
+%% y que logística devuelva el stock al depósito para que sea reingresado
+%% (1.1.1.2.1.4.2.3). Esto significa que Depósito realizará la evaluación de los
+%% productos (ya que algunos pueden haberse roto o perdido su calidad en el
+%% transcurso del envío), y reingresará a stock los que considera que se encuentran
+%% adecuados. Además, se le informará al cliente que su pedido no fue recibido
+%% mediante un email, y se le ofrecerá rehacerlo (1.1.1.2.1.4.2.4).
 
 \clearpage
 \paragraph{1.2 - Mantener[Stock disponible]} \label{para:1.2}
@@ -175,7 +179,7 @@ reposición por medio del sistema en cuanto el stock sea bajo (1.2.1.2). Por otr
 lado, será necesario lograr que el depósito sea informado en cuanto haya un
 pedido nuevo (1.2.1.3). Respecto a esto, la idea es que el depósito mantenga un
 sistema interno propio que cuente con acceso a la misma base de datos que el
-sistema web. Tamibén es necesario armar el pedido, y entregarlo a logística
+csistema web. También es necesario armar el pedido, y entregarlo a logística
 (1.2.1.4), de esto se encargaría el depósito. Finalmente, logística debe
 entregar la reposición de stock a la sucursal (1.2.1.5).
 
@@ -196,7 +200,7 @@ Por un lado se ofrece la capacidad típica de agregar nuevos productos, modifica
 los existentes, o dar de baja otros (ABM, 1.2.2.1.1). Utilizando esta interfaz,
 el administrador deberá modificar los productos, estipulando el límite inferior
 de stock para cada uno de ellos (1.2.2.1.3). Para ayudarlo, el sistema le ofrece
-estadísticas elaboradas sobre el registro de cada transacción de los clientes.
+estadísticas sobre el registro de cada transacción de los clientes.
 
 \paragraph{1.2.2.2 - Mantener [Stock de cada producto por encima de límite estipulado por empresa]} \label{para:1.2.2.2}
 

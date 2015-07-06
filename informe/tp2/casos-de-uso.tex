@@ -52,14 +52,14 @@
 
 \textbf{Aclaración sobre corrección previa}: Para que un link de confirmación
 de nuevo usuario sea válido, la solicitud de registro debe haber sido
-completada y enviada por tal usuario. Los links tienen una vigencia de 10 
-días. Cada link contiene en su interior un hash que lo relaciona de forma 
+completada y enviada por tal usuario. Los links tienen una vigencia de 10
+días. Cada link contiene en su interior un hash que lo relaciona de forma
 única con la solicitud de registro.
 
-En caso de que el link ingresado no corresponda a ninguna solicitud de 
+En caso de que el link ingresado no corresponda a ninguna solicitud de
 registro, de que corresponda a una solicitud de registro, pero la misma tenga
 una antigüedad mayor a 10 días, o de que el mismo ya haya sido utilizado
-previamente, este se considerará inválido. 
+previamente, este se considerará inválido.
 
 %
 % - CASO DE USO: 3) EVALUANDO ESTADO FINANCIERO
@@ -378,10 +378,11 @@ de Uso: \ref{cu:confirmando-compra}}.
   \cucourse{
     1. La mercadería en buen estado es reingresada a stock & \\
     2. Depósito carga la falta del cliente y el costo generado a la empresa & \\
-    3. El pedido es anulado. & \\
-    4. El sistema genera un mensaje conteniendo una invitación a rehacer el pedido, y un link hacia una orden de compra con el mismo carrito del pedido anulado & \\
-    5. Incluye CU \ref{cu:enviando-mail}: Enviando mail. & \\
-    6. FIN CU & \\
+    3. Si el pedido ya fue pagado, es extendido por CU: \ref{cu:reintegrado-dinero}: Reintegrando dinero. & \\
+    4. El pedido es anulado. & \\
+    5. El sistema genera un mensaje conteniendo una invitación a rehacer el pedido, y un link hacia una orden de compra con el mismo carrito del pedido anulado & \\
+    6. Incluye CU \ref{cu:enviando-mail}: Enviando mail. & \\
+    7. FIN CU & \\
   }
   \culabel{registrando-entrega-fallida}
 \end{casodeuso}
