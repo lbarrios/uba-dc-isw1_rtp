@@ -50,9 +50,16 @@
   \culabel{confirmando-direccion-de-mail}
 \end{casodeuso}
 
-\textbf{Aclaración}: Para que un link de confirmación de nuevo usuario sea válido, la solicitud de registro debe haber sido completada y enviada por tal usuario. Los links tienen una vigencia de 10 días. Cada link contiene en su interior un hash que lo relaciona de forma única con la solicitud de registro.
+\textbf{Aclaración sobre corrección previa}: Para que un link de confirmación
+de nuevo usuario sea válido, la solicitud de registro debe haber sido
+completada y enviada por tal usuario. Los links tienen una vigencia de 10 
+días. Cada link contiene en su interior un hash que lo relaciona de forma 
+única con la solicitud de registro.
 
-En caso de que el link ingresado no corresponda a ninguna solicitud de registro, de que corresponda a una solicitud de registro, pero la misma tenga una antigüedad mayor a 10 días, o de que el mismo ya haya sido utilizado previamente, este se considerará inválido. 
+En caso de que el link ingresado no corresponda a ninguna solicitud de 
+registro, de que corresponda a una solicitud de registro, pero la misma tenga
+una antigüedad mayor a 10 días, o de que el mismo ya haya sido utilizado
+previamente, este se considerará inválido. 
 
 %
 % - CASO DE USO: 3) EVALUANDO ESTADO FINANCIERO
@@ -250,12 +257,14 @@ En caso de que el link ingresado no corresponda a ninguna solicitud de registro,
   \culabel{cancelando-pedido}
 \end{casodeuso}
 
-\textbf{Aclaración sobre corrección previa}: el estado de <<carrito confirmado>> es al que ingresa un pedido
-cuando un cliente que se encuentra armando el carrito inicia el proceso de confirmación de compra (por ejemplo
-presionando un botón de confirmar compra).
-Al ingresar a dicho estado, los productos correspondientes al pedido son restados del stock del depósito, 
-y reservados al cliente, de forma tal que luego no puedan ocurrir problemas de stock al intentar 
-preparar el pedido. Para más información, ver \textbf{Caso de Uso: \ref{cu:confirmando-compra}}.
+\textbf{Aclaración sobre corrección previa}: el estado de <<carrito
+confirmado>> es al que ingresa un pedido cuando un cliente que se encuentra
+armando el carrito inicia el proceso de confirmación de compra (por ejemplo
+presionando un botón de confirmar compra). Al ingresar a dicho estado, los
+productos correspondientes al pedido son restados del stock del depósito, y
+reservados al cliente, de forma tal que luego no puedan ocurrir problemas de
+stock al intentar preparar el pedido. Para más información, ver \textbf{Caso
+de Uso: \ref{cu:confirmando-compra}}.
 
 %
 % - CASO DE USO: 14) MODIFICANDO PEDIDO
@@ -529,7 +538,7 @@ preparar el pedido. Para más información, ver \textbf{Caso de Uso: \ref{cu:con
 
 Observación: Nos pareció interesante que este caso de uso sea extendido por
 la modificación del producto, en particular, del umbral de stock mínimo.
-Esta secuencia de eventos está reflejada en el escenario \texttt{L}.
+Esta secuencia de eventos está reflejada en el \textbf{escenario \texttt{L}}.
 
 %
 % - CASO DE USO: 30) ENCARGANDO REPOSICIÓN
