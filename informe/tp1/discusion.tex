@@ -19,11 +19,11 @@
 \paragraph{Ventas}
 
 La opción de registro online es evidentemente más simple y accesible, lo que
-ocasionaría que más clientes opten por registrarse y comprar online, sobre todo
-aquellos clientes que no acostumbran a comprar normalmente en ese supermercado
-(ya que esto no impactaría tanto en los clientes habituales). De lo anterior, se
-deduce que la opción de registro online impactaría positivamente en el objetivo
-de maximizar las ventas online.
+ocasionaría que más clientes opten por registrarse y comprar online, sobre
+todo aquellos clientes que no acostumbran a comprar normalmente en ese
+supermercado (ya que esto no impactaría tanto en los clientes habituales). De
+lo anterior, se deduce que la opción de registro online impactaría
+positivamente en el objetivo de maximizar las ventas online.
 
 \paragraph{Costos}
 
@@ -31,40 +31,40 @@ Al obligar a los clientes a registrarse presencialmente en una sucursal,
 exigiendoles la documentación correspondiente (por ejemplo, dni, un impuesto,
 una factura de servicio) que acredite su domicilio y su identidad, se estaría
 obteniendo una verificación confiable de los mismos, lo que repercute en una
-minimización de los envíos fallidos ocasionados por personas que presentan datos
-falsos, o sin ser esta su intención, cometen errores al escribir los datos. El
-registro online, por el contrario, aumenta la posibilidad de que sucedan esos
-inconvenientes, lo que impactaría negativamente en la minimización de los envíos
-fallidos.
+minimización de los envíos fallidos ocasionados por personas que presentan
+datos falsos, o sin ser esta su intención, cometen errores al escribir los
+datos. El registro online, por el contrario, aumenta la posibilidad de que
+sucedan esos inconvenientes, lo que impactaría negativamente en la
+minimización de los envíos fallidos.
 
 \paragraph{Relación con cliente}
 
 \subparagraph{Maximizar la seguridad en la comunicación:}
 
-Al registrar los datos del cliente en la sucursal, en persona, se presume que la
-transmisión de los datos del cliente es siempre más segura que si se lo hace
-online. De todos modos, según lo solicitado por el CEO, la comunicación se
-establecería por un canal seguro, así que el riesgo de robo de información por
-medio de una escucha de red se encuentra notablemente suprimido. Desde esa
+Al registrar los datos del cliente en la sucursal, en persona, se presume que
+la transmisión de los datos del cliente es siempre más segura que si se lo
+hace online. De todos modos, según lo solicitado por el CEO, la comunicación
+se establecería por un canal seguro, así que el riesgo de robo de información
+por medio de una escucha de red se encuentra notablemente suprimido. Desde esa
 perspectiva, ambos canales de comunicación tienen un nivel de confiabilidad
 similar.
 
-Por otro lado, mediante el canal de registro online, una persona podría llegar a
-realizar un registro fraudulento, suplantando la identidad de otra persona,
+Por otro lado, mediante el canal de registro online, una persona podría llegar
+a realizar un registro fraudulento, suplantando la identidad de otra persona,
 escudada en el anonimato que ofrece internet, mientras que presencialmente es
-mucho más difícil realizar este tipo de prácticas, de lo que concluimos que, si
-bien ambos canales son seguros, la vía presencial resulta bastante más
+mucho más difícil realizar este tipo de prácticas, de lo que concluimos que,
+si bien ambos canales son seguros, la vía presencial resulta bastante más
 confiable.
 
 \subparagraph{Maximizar la comodidad:}
 
-Obligar al cliente a realizar el registro presencialmente, suponiendo además que
-este deba recolectar y presentar toda la documentación pertinente, le puede
-llegar a resultar molesto e incómodo. En el peor caso el cliente tendría que
-juntar y fotocopiar toda la documentación exigida, dirigirse a una sucursal en
-horario laboral, no necesariamente cerca de su domicilio, esperar a ser
-atendido, completar algún tipo de formulario, entregar la documentación, y
-esperar a que le informen de algún modo que su usuario fue dado de alta.
+Obligar al cliente a realizar el registro presencialmente, suponiendo además
+que este deba recolectar y presentar toda la documentación pertinente, le
+puede llegar a resultar molesto e incómodo. En el peor caso el cliente tendría
+que juntar y fotocopiar toda la documentación exigida, dirigirse a una
+sucursal en horario laboral, no necesariamente cerca de su domicilio, esperar
+a ser atendido, completar algún tipo de formulario, entregar la documentación,
+y esperar a que le informen de algún modo que su usuario fue dado de alta.
 Mediante el registro online, en cambio, el cliente podrá ingresar al website
 desde la comodidad de su casa, en cualquier horario, e ingresar sus datos.
 Inmediatamente, entonces, el cliente tendría la posibilidad de realizar una
@@ -204,31 +204,40 @@ por subsanarla.
 
 \subparagraph{Minimizar costos de atender en sucursal:}
 
-Asumiendo que ante una mayor cuota de clientes con contraentrega bloqueada,
-hay a su vez una mayor cuota de clientes que optan por comprar en sucursal, es
-evidente que la opción que más bloqueos a contraentrega produzca es la que más
-clientes estaría enviando a la sucursal.
+Asumiendo que \textbf{ante una mayor cuota de clientes con contraentrega
+bloqueada, hay a su vez una mayor cuota de clientes que optan por comprar en
+sucursal}, es evidente que la opción que más bloqueos a contraentrega produzca
+es la que más clientes estaría enviando a la sucursal.
 
-Teniendo en cuenta que atender un cliente en la sucursal tiene costos
-inherentes, la opción que estaría minimizando los costos de atender en
-sucursal es la de bloquear la contraentrega ante la primer entrega fallida.
+Asimismo, teniendo en cuenta que atender un cliente en la sucursal tiene
+costos inherentes, \textbf{la opción que estaría minimizando los costos de
+atender en sucursal es la de bloquear la contraentrega según el umbral de
+redituabilidad del cliente}. Esto es así ya que si comparamos esta opción con
+la opción de bloquear la contraentrega a la primer entrega fallida, es fácil
+ver que la cantidad de bloqueos que produciría esta última opción sería
+siempre mayor o igual que la cantidad de bloqueos que produce la primera
+opción. Esto es así porque, para cada entrega fallida, la segunda opción
+produce automáticamente un bloqueo de contraentrega, mientras que la primera
+opción puede no llegar a producir este bloqueo, según el nivel de
+redituabilidad que tenga el cliente.
 
-Del mismo modo, si se permite cierto umbral de entregas fallidas en base a la
+Entonces, si se permite cierto umbral de entregas fallidas en base a la
 rentabilidad de ese cliente, el cliente no necesariamente se vería obligado a
-comprar en sucursal, y por lo tanto no produciría un gasto de atender en
-sucursal.
+comprar en sucursal, y por lo tanto no produciría este potencial gasto de
+atender en sucursal.
 
-Además, existe otro costo, que es el de disponer de una persona que pueda
-cobrar la multa que el cliente debe pagar para subsanar el costo del envío no
-recibido, y que se le vuelva a permitir contraentrega. En el caso de los
-clientes que no tengan la posibilidad de realizar compras online, estos se
-dirigirían a la sucursal para pagar la multa. En cualquier caso el primer
-refinamiento, al producir más bloqueos, produciría más multas, y estaría
-aportando a este costo. En el caso del segundo refinamiento, al aceptar un
-umbral de pérdida de rentabilidad, el costo de las multas no necesariamente
-debe ser pagado por el cliente, sino hasta que se supere el umbral. En este
-caso se podría considerar, además, la posibilidad de que la multa sea pagada
-en efectivo, junto con la siguiente compra contraentrega.
+Existe además otro costo, que es el de disponer de un mecanismo o una persona
+que pueda cobrar la multa que el cliente debe pagar para subsanar el costo del
+envío no recibido, y que se le vuelva a permitir realizar contraentrega. En el
+caso de los clientes que no tengan la posibilidad de realizar compras online,
+estos se dirigirían necesariamente a la sucursal para pagar la multa. En
+cualquier caso, el primer refinamiento, al producir más bloqueos, produciría
+más multas, y estaría aportando a este costo. En el caso del segundo
+refinamiento, al aceptar un umbral de pérdida de rentabilidad, no sería
+necesario el pago de una multa, sino que las propias compras\footnote{Recordar
+que el cliente aún puede realizar compras pagando online.} del cliente
+terminarían por elevar su índice de redituabilidad, ocasionando eventualmente
+que se habilite de nuevo la posibilidad de realizar contraentrega.
 
 \paragraph{Relación con cliente:}
 
@@ -240,23 +249,69 @@ Asignamos puntajes neutros en ambos refinamientos.
 
 \subparagraph{Maximizar la comodidad:}
 
-Asumiendo que la contraentrega es una comodidad que se le ofrece al cliente,
-ya que además de que se le brinda la posibilidad de comprar online, con todas
-las comodidades que esto acarrea, no necesita realizar el pago de forma
-online, lo que también puede considerarse una comodidad en caso de que el
-cliente no tenga forma de pagar online, o no desee hacerlo. Al bloquear la
-posibilidad de realizar contraentrega, entonces, se le está quitando esta
-comodidad. Dado el caso, el cliente tendrá que decidir si pagar online, o
-comprar en sucursal.
+Como primer premisa, planteamos que \textbf{la contraentrega es de por sí una
+comodidad} que se le ofrece al cliente, ya que además de que se le brinda la
+posibilidad de comprar online, con todas las comodidades que esto acarrea, no
+necesita realizar el pago de forma online, lo que también puede considerarse
+una comodidad en caso de que el cliente no tenga forma de pagar online, o no
+desee hacerlo. 
 
-Si bien ambas opciones de refinamiento pueden desembocar en un bloqueo de la
-modalidad contraentrega, ya se explicaron las razones por las cuales el primer
-refinamiento tiene potencialmente una mayor tasa de bloqueos, por lo que va en
-contra de la comodidad del cliente. Además, considerando que pueden haber
-razones reales por las que el cliente pueda ausentarse durante el horario de
-entrega, un cliente que siempre tuvo una buena conducta, puede sentirse
-enojado de que se le bloquee la contraentrega, lo cual atenta contra la buena
-relación con el mismo. Por otro lado, al manejar un sistema de rating, si bien
-no se está aportando de forma directa a la comodidad del cliente, se logra
-mantener una comodidad que de otra forma el cliente perdería, por lo que
-consideramos que hay un pequeño aporte aquí.
+Bloquear la posibilidad de realizar contraentrega, entonces, es quitarle esta
+comodidad al cliente. Dado el caso, el cliente tendrá que optar por pagar
+online, o en su defecto comprar en sucursal.
+
+Como premisa adicional, planteamos que el hecho de \textbf{tener que pagar una
+multa es una incomodidad} ya que, por más simplicidad que se le ofrezca al
+cliente en este proceso, no deja de ser un trámite, y como tal le representa
+al cliente una carga, un problema que este debe resolver, que consumirá su
+tiempo y le requerirá un esfuerzo, aún cuando este sea mínimo, así sea el de
+dirigirse a la sucursal y pagarla.
+
+También tenemos en cuenta que, tal y como ya como se explicó con anterioridad,
+la opción de <<bloquear la contraentrega ante la primer entrega fallida>>
+produciría un índice de bloqueos mayor o igual que la opción de <<bloquear la
+contraentrega según un umbral de redituabilidad>>.
+
+Considerando, además, que pueden haber razones reales o justificables por las
+cuales el cliente pueda ausentarse durante el horario de entrega, entonces no
+sería justo que un <<cliente frecuente>>, que siempre tuvo una buena conducta,
+vea bloqueada su contraentrega ante su primer ausencia, siendo que esta puede
+haber sido ocasionada por una emergencia, o alguna eventualidad inevitable. En
+esta situación, entonces, dicho cliente puede llegar a sentirse enojado o
+defraudado de que se le bloquee la contraentrega. Dichas reacciones, como la
+mayoría de las emociones negativas, son una incomodidad, ya que generan un
+malestar emocional, y pueden potenciar sensiblemente las incomodidades
+descriptas en los párrafos anteriores. Un cliente enojado, o que siente que es
+víctima de lo que consiera una <<situación injusta>>, al momento de dirigirse
+a la sucursal a pagar una multa sentirá una incomodidad inmensamente superior
+a la que sentiría si considerase que el bloqueo se está realizando por
+<<motivos justos>>. De este modo, bajo la otra perspectiva, de <<bloquear
+según un umbral de redituabilidad>>, seguramente no se le bloquearía la
+contraentrega a un <<cliente frecuente>> que presentase \textbf{una} ausencia
+eventual; sí se le bloquearía la contraentrega a dicho cliente en el caso de
+que presentase un nivel de ausencias que supere su ``buena conducta'' como
+cliente. Aún cuando se le realice este eventual bloqueo, el cliente debería
+sentir y percibir, en líneas generales, que se lo está tratando de una forma
+mucho más justa. Dicho de otro modo, asumimos que el cliente promedio sería
+consciente de que ``el bloqueo es merecido'', por lo que el malestar emocional
+producido por el mismo debería verse, en comparación con la otra opción,
+reducido.
+
+Entonces, si bien ambas opciones de refinamiento pueden desembocar en un
+bloqueo de la modalidad contraentrega, la opción de <<bloquear la
+contraentrega ante la primer entrega fallida>> tiene potencialmente una mayor
+tasa de bloqueos, y teniendo en cuenta que una mayor tasa de bloqueos implica
+una mayor tasa de incomodidades, por las razones expuestas arriba, por
+transitividad podemos deducir que la opción de <<bloquear la contraentrega
+según un umbral de redituabilidad>> genera una mayor incomodidad en el
+cliente. 
+
+Por otro lado, al manejar un sistema de rating/redituabilidad, si bien no se
+está aportando de forma directa a la comodidad del cliente, se logra:
+disminuir la tasa de bloqueos, lo cual disminuye la tasa de incomodidades,
+mantener una comodidad emocional (aplicando una medida ``más justa'') que de
+otra forma el cliente perdería, y disminuir el malestar ocasionado en caso de
+que se produzca el bloqueo, al permitir que el cliente perciba que lo que está
+recibiendo se corresponde con su actitud como cliente. Por todo esto,
+consideramos que esta opción genera un pequeño aporte en el objetivo de
+maximizar la comodidad del cliente.
