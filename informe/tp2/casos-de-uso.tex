@@ -246,6 +246,13 @@
   \culabel{cancelando-pedido}
 \end{casodeuso}
 
+\textbf{Aclaración sobre corrección previa}: el estado de <<carrito confirmado>> es al que ingresa un pedido
+cuando un cliente que se encuentra armando el carrito inicia el proceso de confirmación de compra (por ejemplo
+presionando un botón de confirmar compra).
+Al ingresar a dicho estado, los productos correspondientes al pedido son restados del stock del depósito, 
+y reservados al cliente, de forma tal que luego no puedan ocurrir problemas de stock al intentar 
+preparar el pedido. Para más información, ver \textbf{Caso de Uso: \ref{cu:confirmando-compra}}.
+
 %
 % - CASO DE USO: 14) MODIFICANDO PEDIDO
 %
