@@ -50,6 +50,10 @@
   \culabel{confirmando-direccion-de-mail}
 \end{casodeuso}
 
+\textbf{Aclaración}: Para que un link de confirmación de nuevo usuario sea válido, la solicitud de registro debe haber sido completada y enviada por tal usuario. Los links tienen una vigencia de 10 días. Cada link contiene en su interior un hash que lo relaciona de forma única con la solicitud de registro.
+
+En caso de que el link ingresado no corresponda a ninguna solicitud de registro, de que corresponda a una solicitud de registro, pero la misma tenga una antigüedad mayor a 10 días, o de que el mismo ya haya sido utilizado previamente, este se considerará inválido. 
+
 %
 % - CASO DE USO: 3) EVALUANDO ESTADO FINANCIERO
 %
