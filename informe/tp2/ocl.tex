@@ -99,9 +99,13 @@ or
       Un cliente particular C tiene un producto recomendado P si y solo si:
           C nunca compro P y
           P pertenece a la lista de 10 más comprados de algún cliente particular parecido a C
+
+          Observación: la definición de \texttt{productosComprados} utiliza una navegación a través de conjuntos que se van aplanando automáticamente\footnote{http://st.inf.tu-dresden.de/files/general/OCLByExampleLecture.pdf}.
     }
-Context: Cliente Particular
-  edadParecida(cliente1, cliente2) = |cliente1.edad - cliente2.edad| < 4
+  Context: Cliente Particular
+  edad(cliente) = (currentTime() - cliente.nacimiento).years
+
+  edadParecida(cliente1, cliente2) = |edad(cliente1) - edad(cliente2)| < 4
 
   productosComprados(cliente) = cliente.realizo.contiene.correspondeA
 
